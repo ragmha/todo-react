@@ -19,41 +19,6 @@
       "id": 4,
       "name": "Dance",
       "isComplete": true
-    },
-    {
-      "id": 20883,
-      "name": "meow",
-      "isComplete": false
-    },
-    {
-      "id": 94593,
-      "name": "sup",
-      "isComplete": false
-    },
-    {
-      "id": 78904,
-      "name": "meow",
-      "isComplete": false
-    },
-    {
-      "id": 98831,
-      "name": "a",
-      "isComplete": false
-    },
-    {
-      "id": 12751,
-      "name": "meow",
-      "isComplete": false
-    },
-    {
-      "id": 62616,
-      "name": "sup",
-      "isComplete": false
-    },
-    {
-      "id": 71414,
-      "name": "suuuh",
-      "isComplete": false
     }
   ]
 }

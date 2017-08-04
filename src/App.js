@@ -13,7 +13,12 @@ import {
   filterTodos,
 } from './lib/todoHelpers';
 
-import { loadTodos, createTodo, saveTodo } from './lib/todoService';
+import {
+  loadTodos,
+  createTodo,
+  saveTodo,
+  destroyTodo,
+} from './lib/todoService';
 
 import { pipe, partial } from './lib/utils';
 
@@ -38,6 +43,7 @@ class App extends Component {
     evt.preventDefault();
     const updatedTodos = removeTodo(this.state.todos, id);
     this.setState({ todos: updatedTodos });
+    destroyTodo(id).then(() => this.showTempMessage('Todo Removed'));
   };
 
   handleToggle = id => {
