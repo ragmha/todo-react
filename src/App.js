@@ -17,13 +17,11 @@ import { pipe, partial } from './lib/utils';
 
 import { TodoForm, TodoList, Footer } from './components/todo';
 
+import { loadTodos } from './lib/todoService';
+
 class App extends Component {
   state = {
-    todos: [
-      { id: 1, name: 'Learn JSX', isComplete: true },
-      { id: 2, name: 'Build awesome app', isComplete: false },
-      { id: 3, name: 'Ship It!', isComplete: false },
-    ],
+    todos: [],
     currentTodo: '',
     errorMessage: '',
   };
@@ -31,6 +29,10 @@ class App extends Component {
   static contextTypes = {
     route: PropTypes.string,
   };
+
+  componentDidMount() {
+    loadTodos().then(todos => this.setState({ todos }));
+  }
 
   handleRemove = (id, evt) => {
     evt.preventDefault();
