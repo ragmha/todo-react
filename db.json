@@ -8,17 +8,17 @@
     {
       "id": 2,
       "name": "Build awesome app",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 3,
       "name": "Ship It!",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 4,
       "name": "Dance",
-      "isComplete": false
+      "isComplete": true
     },
     {
       "id": 20883,
