@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
-import PropTypes from 'prop-types';
 
 import {
   addTodo,
@@ -13,11 +13,11 @@ import {
   filterTodos,
 } from './lib/todoHelpers';
 
+import { loadTodos, createTodo } from './lib/todoService';
+
 import { pipe, partial } from './lib/utils';
 
 import { TodoForm, TodoList, Footer } from './components/todo';
-
-import { loadTodos, createTodo } from './lib/todoService';
 
 class App extends Component {
   state = {
@@ -66,7 +66,12 @@ class App extends Component {
       currentTodo: '',
       errorMessage: '',
     });
-    createTodo(newTodo).then(() => console.log('Todo Added'));
+    createTodo(newTodo).then(() => this.showTempMessage('Todo added'));
+  };
+
+  showTempMessage = msg => {
+    this.setState({ message: msg });
+    setTimeout(() => this.setState({ message: '' }), 2500);
   };
 
   handleEmptySubmit = e => {
@@ -97,6 +102,10 @@ class App extends Component {
           {this.state.errorMessage &&
             <span className="error">
               {this.state.errorMessage}
+            </span>}
+          {this.state.message &&
+            <span className="success">
+              {this.state.message}
             </span>}
           <TodoForm
             handleInputChange={this.handleInputChange}
