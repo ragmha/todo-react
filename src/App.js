@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import PropTypes from 'prop-types';
 
 import {
   addTodo,
@@ -28,7 +29,7 @@ class App extends Component {
   };
 
   static contextTypes = {
-    route: React.PropTypes.string,
+    route: PropTypes.string,
   };
 
   handleRemove = (id, evt) => {
