@@ -13,7 +13,7 @@ import {
 
 import { pipe, partial } from './lib/utils';
 
-import { TodoForm, TodoList } from './components/todo';
+import { TodoForm, TodoList, Footer } from './components/todo';
 
 class App extends Component {
   state = {
@@ -96,6 +96,7 @@ class App extends Component {
             handleRemove={this.handleRemove}
             todos={this.state.todos}
           />
+          <Footer />
         </div>
       </div>
     );
